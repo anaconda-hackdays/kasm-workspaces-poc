@@ -1,3 +1,7 @@
+variable "primary_region" {
+  default = "us-east-1"
+}
+
 variable "aws_domain_name" {
   default = "kasm.contoso.com"
 }
