@@ -2,7 +2,7 @@ variable "aws_region" {
   description = "The AWS region for the deployment. (e.g us-east-1)"
 }
 
-variable "AWS_ACCESS_KEY_ID " {
+variable AWS_ACCESS_KEY_ID {
   description = "The AWS access key used for deployment"
 }
 

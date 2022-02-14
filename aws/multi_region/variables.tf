@@ -13,13 +13,9 @@ variable "aws_key_pair" {
   default = ""
 }
 
-variable "AWS_ACCESS_KEY_ID " {
+variable "AWS_ACCESS_KEY_ID" {}
 
-}
-
-variable "AWS_SECRET_ACCESS_KEY" {
-
-}
+variable "AWS_SECRET_ACCESS_KEY" {}
 
 # Define these as env vars since repo is public
 
