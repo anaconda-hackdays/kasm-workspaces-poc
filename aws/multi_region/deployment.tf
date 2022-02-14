@@ -6,19 +6,15 @@
 
 module "primary_region" {
   source               = "./primary"
-  aws_region           = "us-east-1"
-  zone_name            = "us-east-1"
+  aws_region           = var.primary_region
+  zone_name            = var.primary_region
   ec2_ami              = "ami-013f17f36f8b1fefb"
   db_instance_type     = "t3.small"
-  num_agents           = 2
+  num_agents           = 1
   agent_instance_type  = "t3.medium"
-  num_webapps          = 2
+  num_webapps          = 1
   webapp_instance_type = "t3.small"
 
-
-
-  AWS_ACCESS_KEY_ID     = var.AWS_ACCESS_KEY_ID
-  AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
   project_name          = var.project_name
   kasm_build            = var.kasm_build
   database_password     = var.database_password
@@ -27,7 +23,7 @@ module "primary_region" {
   admin_password        = var.admin_password
   manager_token         = var.manager_token
   aws_key_pair          = var.aws_key_pair
-  domain_name       = var.domain_name
+  domain_name           = var.domain_name
   ssh_access_cidr       = var.ssh_access_cidr
 }
 
@@ -37,23 +33,19 @@ module "primary_region" {
 #   for each additional region desired.
 ###########################################################
 
-module "us-west-1-webapps" {
+module "eu-central-1-webapps" {
   source               = "./webapps"
-  faux_aws_region      = "us-west-1"
-  zone_name            = "us-west-1"
-  num_webapps          = 2
+  faux_aws_region      = var.eu_region
+  zone_name            = var.eu_region
+  num_webapps          = 1
   webapp_instance_type = "t3.small"
   ec2_ami              = "ami-013f17f36f8b1fefb"
-
-
 
   primary_aws_region    = module.primary_region.primary_aws_region
   webapp_subnet_id_1    = module.primary_region.webapp_subnet_1_id
   webapp_subnet_id_2    = module.primary_region.webapp_subnet_2_id
   agent_subnet_id       = module.primary_region.agent_subnet_id
-  AWS_ACCESS_KEY_ID     = var.AWS_ACCESS_KEY_ID
-  AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
-  domain_name       = var.domain_name
+  domain_name           = var.domain_name
   project_name          = var.project_name
   kasm_build            = var.kasm_build
   database_password     = var.database_password
@@ -67,19 +59,15 @@ module "us-west-1-webapps" {
 }
 
 
-module "us-west-1-agents" {
+module "eu-central-1-agents" {
   source              = "./agents"
-  aws_region          = "us-west-1"
-  zone_name           = "us-west-1"
-  num_agents          = 2
+  aws_region          = var.eu_region
+  zone_name           = var.eu_region
+  num_agents          = 1
   agent_instance_type = "t3.medium"
   ec2_ami             = "ami-08d0eee5e00da8a9b"
 
-
-
-  AWS_ACCESS_KEY_ID     = var.AWS_ACCESS_KEY_ID
-  AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
-  domain_name       = var.domain_name
+  domain_name           = var.domain_name
   project_name          = var.project_name
   kasm_build            = var.kasm_build
   manager_token         = var.manager_token

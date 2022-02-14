@@ -2,6 +2,14 @@ variable "primary_region" {
   default = "us-east-1"
 }
 
+variable "eu_region" {
+  default = "eu-central-1"
+}
+
+variable "anaconda_aws_assume_role_arns" {
+  
+}
+
 variable "domain_name" {
 }
 
@@ -12,10 +20,6 @@ variable "project_name" {
 variable "aws_key_pair" {
   default = ""
 }
-
-variable "AWS_ACCESS_KEY_ID" {}
-
-variable "AWS_SECRET_ACCESS_KEY" {}
 
 # Define these as env vars since repo is public
 

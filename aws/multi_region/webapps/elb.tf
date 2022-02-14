@@ -31,7 +31,6 @@ resource "aws_security_group" "kasm-default-elb-sg" {
 
 resource "aws_s3_bucket" "kasm-s3-logs" {
   bucket_prefix = "${var.project_name}-${var.zone_name}-"
-  acl           = "private"
   force_destroy = true
 
 }
