@@ -6,19 +6,16 @@ variable "eu_region" {
   default = "eu-central-1"
 }
 
-variable "anaconda_aws_assume_role_arns" {
-  
-}
-
 variable "domain_name" {
+  default = "devops.anaconda.com"
 }
 
 variable "project_name" {
-  default = "anaconda-kasm"
+  default = "anaconda"
 }
 
 variable "aws_key_pair" {
-  default = ""
+  default = "pwilson"
 }
 
 # Define these as env vars since repo is public
