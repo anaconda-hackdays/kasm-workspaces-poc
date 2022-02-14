@@ -13,7 +13,7 @@ variable "project_name" {
   description = "The name of the deployment (e.g dev, staging). A short single word"
 }
 
-variable "aws_domain_name" {
+variable "domain_name" {
   description = "The Route53 Zone used for the dns entries. This must already exist in the AWS account. (e.g dev.kasm.contoso.com). The deployment will be accessed via this zone name via https"
 }
 

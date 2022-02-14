@@ -1,11 +1,11 @@
 data "aws_route53_zone" "kasm-route53-zone" {
-  name         =  "${var.aws_domain_name}"
+  name         =  "${var.domain_name}"
   private_zone = false
 }
 
 resource "aws_acm_certificate" "kasm-alb-cert" {
-  domain_name       = "${var.aws_domain_name}"
-  subject_alternative_names = ["*.${var.aws_domain_name}"]
+  domain_name       = "${var.domain_name}"
+  subject_alternative_names = ["*.${var.domain_name}"]
   validation_method = "DNS"
 
 

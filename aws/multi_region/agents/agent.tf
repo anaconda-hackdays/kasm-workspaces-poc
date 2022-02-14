@@ -21,7 +21,7 @@ resource "aws_instance" "kasm-agent" {
               wget ${var.kasm_build}
               tar xvf kasm_*.tar.gz
               PUBLIC_DNS=(`curl -s http://169.254.169.254/latest/meta-data/public-ipv4`)
-              bash kasm_release/install.sh -S agent -e  -p $PUBLIC_DNS -m ${var.zone_name}-lb.${var.aws_domain_name} -M ${var.manager_token}
+              bash kasm_release/install.sh -S agent -e  -p $PUBLIC_DNS -m ${var.zone_name}-lb.${var.domain_name} -M ${var.manager_token}
               EOF
   tags = {
     Name = "${var.project_name}-${var.zone_name}-kasm-agent"

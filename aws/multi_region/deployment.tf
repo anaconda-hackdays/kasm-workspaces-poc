@@ -27,7 +27,7 @@ module "primary_region" {
   admin_password        = var.admin_password
   manager_token         = var.manager_token
   aws_key_pair          = var.aws_key_pair
-  aws_domain_name       = var.aws_domain_name
+  domain_name       = var.domain_name
   ssh_access_cidr       = var.ssh_access_cidr
 }
 
@@ -53,7 +53,7 @@ module "us-west-1-webapps" {
   agent_subnet_id       = module.primary_region.agent_subnet_id
   AWS_ACCESS_KEY_ID     = var.AWS_ACCESS_KEY_ID
   AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
-  aws_domain_name       = var.aws_domain_name
+  domain_name       = var.domain_name
   project_name          = var.project_name
   kasm_build            = var.kasm_build
   database_password     = var.database_password
@@ -79,7 +79,7 @@ module "us-west-1-agents" {
 
   AWS_ACCESS_KEY_ID     = var.AWS_ACCESS_KEY_ID
   AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
-  aws_domain_name       = var.aws_domain_name
+  domain_name       = var.domain_name
   project_name          = var.project_name
   kasm_build            = var.kasm_build
   manager_token         = var.manager_token

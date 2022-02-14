@@ -2,7 +2,7 @@ variable "primary_region" {
   default = "us-east-1"
 }
 
-variable "aws_domain_name" {
+variable "domain_name" {
 }
 
 variable "project_name" {

@@ -13,7 +13,7 @@ module "primary-webapps" {
   agent_subnet_id       = "${aws_subnet.kasm-agent-subnet.id}"
   AWS_ACCESS_KEY_ID         = "${var.AWS_ACCESS_KEY_ID }"
   AWS_SECRET_ACCESS_KEY        = "${var.AWS_SECRET_ACCESS_KEY}"
-  aws_domain_name       = "${var.aws_domain_name}"
+  domain_name       = "${var.domain_name}"
   project_name          = "${var.project_name}"
   kasm_build            = "${var.kasm_build}"
   database_password     = "${var.database_password}"

@@ -92,7 +92,7 @@ resource "aws_lb_target_group" "kasm-target-group" {
 }
 
 data "aws_route53_zone" "kasm-route53-zone" {
-  name         = var.aws_domain_name
+  name         = var.domain_name
   private_zone = false
 }
 
@@ -120,7 +120,7 @@ resource "aws_lb_target_group_attachment" "kasm-target-group-attachment" {
 
 resource "aws_route53_record" "kasm-route53-elb-record" {
   zone_id = data.aws_route53_zone.kasm-route53-zone.zone_id
-  name    = "${var.zone_name}-lb.${var.aws_domain_name}"
+  name    = "${var.zone_name}-lb.${var.domain_name}"
   type    = "A"
 
   alias {
@@ -132,7 +132,7 @@ resource "aws_route53_record" "kasm-route53-elb-record" {
 
 resource "aws_route53_record" "kasm-app-url" {
   zone_id        = data.aws_route53_zone.kasm-route53-zone.zone_id
-  name           = var.aws_domain_name
+  name           = var.domain_name
   type           = "A"
   set_identifier = "${var.project_name}-${var.zone_name}-set-id"
 
@@ -149,7 +149,7 @@ resource "aws_route53_record" "kasm-app-url" {
 }
 
 resource "aws_route53_health_check" "kasm-elb-hc" {
-  fqdn              = "${var.zone_name}-lb.${var.aws_domain_name}"
+  fqdn              = "${var.zone_name}-lb.${var.domain_name}"
   port              = 443
   type              = "HTTPS"
   resource_path     = "/api/__healthcheck"
@@ -157,6 +157,6 @@ resource "aws_route53_health_check" "kasm-elb-hc" {
   request_interval  = "30"
 
   tags = {
-    Name = "hc-${var.zone_name}-lb.${var.aws_domain_name}"
+    Name = "hc-${var.zone_name}-lb.${var.domain_name}"
   }
 }
