@@ -1,7 +1,7 @@
 resource "aws_security_group" "kasm-agent-sg" {
   name        = "${var.project_name}-${var.zone_name}-kasm-agent-access"
   description = "Allow access to agents"
-  vpc_id      = "${aws_vpc.kasm-default-vpc.id}"
+  vpc_id      = aws_vpc.kasm-default-vpc.id
 
   ingress {
     from_port   = 22

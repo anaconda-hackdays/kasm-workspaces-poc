@@ -1,4 +1,4 @@
-variable AWS_ACCESS_KEY_ID {
+variable "AWS_ACCESS_KEY_ID" {
   description = "The AWS access key used for deployment"
 }
 

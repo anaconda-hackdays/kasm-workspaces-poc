@@ -1,4 +1,4 @@
-variable AWS_ACCESS_KEY_ID {
+variable "AWS_ACCESS_KEY_ID" {
   description = "The AWS access key used for deployment"
 }
 
@@ -27,17 +27,17 @@ variable "num_webapps" {
 }
 
 variable "webapp_instance_type" {
-  default = "t3.small"
+  default     = "t3.small"
   description = "The instance type for the webapps"
 }
 
 variable "num_agents" {
-  default = 0
+  default     = 0
   description = "The number of Agent Role Servers to create in the deployment"
 }
 
 variable "agent_instance_type" {
-  default = "t3.medium"
+  default     = "t3.medium"
   description = "the instance type for the agents"
 }
 

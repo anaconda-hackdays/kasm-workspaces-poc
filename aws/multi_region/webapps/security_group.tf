@@ -3,7 +3,7 @@
 resource "aws_security_group" "kasm-webapp-sg" {
   name        = "${var.project_name}-${var.zone_name}-kasm-webapp-access"
   description = "Allow access to webapps"
-  vpc_id      = "${var.primary_vpc_id}"
+  vpc_id      = var.primary_vpc_id
 
   ingress {
     from_port   = 22
@@ -13,16 +13,16 @@ resource "aws_security_group" "kasm-webapp-sg" {
   }
 
   ingress {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
     security_groups = ["${aws_security_group.kasm-default-elb-sg.id}"]
   }
 
   ingress {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
     security_groups = ["${aws_security_group.kasm-agent-sg.id}"]
   }
 
@@ -36,7 +36,7 @@ resource "aws_security_group" "kasm-webapp-sg" {
 resource "aws_security_group" "kasm-agent-sg" {
   name        = "${var.project_name}-${var.zone_name}-kasm-agent-access"
   description = "Allow access to agents"
-  vpc_id      = "${var.primary_vpc_id}"
+  vpc_id      = var.primary_vpc_id
 
   ingress {
     from_port   = 22
