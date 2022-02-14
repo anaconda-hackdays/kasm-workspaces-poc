@@ -3,24 +3,25 @@ variable "primary_region" {
 }
 
 variable "aws_domain_name" {
-  default = "kasm.contoso.com"
 }
 
 variable "project_name" {
-  default = "contoso"
+  default = "anaconda-kasm"
 }
 
 variable "aws_key_pair" {
   default = ""
 }
 
-variable "aws_access_key" {
-  default = ""
+variable "AWS_ACCESS_KEY_ID " {
+
 }
 
-variable "aws_secret_key" {
-  default = ""
+variable "AWS_SECRET_ACCESS_KEY" {
+
 }
+
+# Define these as env vars since repo is public
 
 variable "database_password" {
   default = "changeme"

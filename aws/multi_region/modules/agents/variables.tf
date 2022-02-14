@@ -1,16 +1,14 @@
-variable "AWS_ACCESS_KEY_ID " {
-  description = "The AWS access key used for deployment"
-}
-
-variable "AWS_SECRET_ACCESS_KEY" {
-  description = "The AWS secret key used for deployment"
-}
-
 variable "project_name" {
   description = "The name of the deployment (e.g dev, staging). A short single word"
 }
 
-variable "aws_domain_name" {
+variable "AWS_ACCESS_KEY_ID _ID" {
+}
+
+variable "AWS_SECRET_ACCESS_KEY" {
+}
+
+variable "domain_name" {
   description = "The Route53 Zone used for the dns entries. This must already exist in the AWS account. (e.g dev.kasm.contoso.com). The deployment will be accessed via this zone name via https"
 }
 

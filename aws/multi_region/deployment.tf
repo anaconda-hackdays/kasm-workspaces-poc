@@ -17,8 +17,8 @@ module "primary_region" {
 
 
 
-  aws_access_key        = "${var.aws_access_key}"
-  aws_secret_key        = "${var.aws_secret_key}"
+  AWS_ACCESS_KEY_ID         = "${var.AWS_ACCESS_KEY_ID }"
+  AWS_SECRET_ACCESS_KEY        = "${var.AWS_SECRET_ACCESS_KEY}"
   project_name          = "${var.project_name}"
   kasm_build            = "${var.kasm_build}"
   database_password     = "${var.database_password}"
@@ -51,8 +51,8 @@ module "us-west-1-webapps" {
   webapp_subnet_id_1    = "${module.primary_region.webapp_subnet_1_id}"
   webapp_subnet_id_2    = "${module.primary_region.webapp_subnet_2_id}"
   agent_subnet_id       = "${module.primary_region.agent_subnet_id}"
-  aws_access_key        = "${var.aws_access_key}"
-  aws_secret_key        = "${var.aws_secret_key}"
+  AWS_ACCESS_KEY_ID         = "${var.AWS_ACCESS_KEY_ID }"
+  AWS_SECRET_ACCESS_KEY        = "${var.AWS_SECRET_ACCESS_KEY}"
   aws_domain_name       = "${var.aws_domain_name}"
   project_name          = "${var.project_name}"
   kasm_build            = "${var.kasm_build}"
@@ -77,8 +77,8 @@ module "us-west-1-agents" {
 
 
 
-  aws_access_key        = "${var.aws_access_key}"
-  aws_secret_key        = "${var.aws_secret_key}"
+  AWS_ACCESS_KEY_ID         = "${var.AWS_ACCESS_KEY_ID }"
+  AWS_SECRET_ACCESS_KEY        = "${var.AWS_SECRET_ACCESS_KEY}"
   aws_domain_name       = "${var.aws_domain_name}"
   project_name          = "${var.project_name}"
   kasm_build            = "${var.kasm_build}"

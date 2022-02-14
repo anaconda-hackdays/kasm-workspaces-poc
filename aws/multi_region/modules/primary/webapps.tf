@@ -1,5 +1,7 @@
 module "primary-webapps" {
   source = "../webapps"
+  AWS_ACCESS_KEY_ID _ID     = var.AWS_ACCESS_KEY_ID _ID
+  AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
   primary_aws_region    = "${var.aws_region}"
   faux_aws_region       = "${var.aws_region}"
   zone_name             = "${var.zone_name}"
@@ -11,9 +13,7 @@ module "primary-webapps" {
   webapp_subnet_id_1    = "${aws_subnet.kasm-webapp-subnet-1.id}"
   webapp_subnet_id_2    = "${aws_subnet.kasm-webapp-subnet-2.id}"
   agent_subnet_id       = "${aws_subnet.kasm-agent-subnet.id}"
-  AWS_ACCESS_KEY_ID         = "${var.AWS_ACCESS_KEY_ID }"
-  AWS_SECRET_ACCESS_KEY        = "${var.AWS_SECRET_ACCESS_KEY}"
-  aws_domain_name       = "${var.aws_domain_name}"
+  domain_name       = "${var.domain_name}"
   project_name          = "${var.project_name}"
   kasm_build            = "${var.kasm_build}"
   database_password     = "${var.database_password}"
