@@ -13,7 +13,7 @@ resource "aws_instance" "kasm-db" {
               #!/bin/bash -xe
               exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
               fallocate -l 4g /mnt/kasm.swap
-              chmod 600 /mnt/kasmswap
+              chmod 600 /mnt/kasm.swap
               mkswap /mnt/kasm.swap
               swapon /mnt/kasm.swap
               echo '/mnt/kasm.swap swap swap defaults 0 0' | tee -a /etc/fstab
