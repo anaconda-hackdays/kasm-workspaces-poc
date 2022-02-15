@@ -8,7 +8,7 @@ module "primary_region" {
   source               = "./primary"
   aws_region           = var.primary_region
   zone_name            = var.primary_region
-  ec2_ami              = "ami-013f17f36f8b1fefb"
+  ec2_ami              = "ami-01b996646377b6619"
   db_instance_type     = "t3.small"
   num_agents           = 1
   agent_instance_type  = "t3.medium"
@@ -39,7 +39,7 @@ module "eu-central-1-webapps" {
   zone_name            = var.eu_region
   num_webapps          = 1
   webapp_instance_type = "t3.small"
-  ec2_ami              = "ami-013f17f36f8b1fefb"
+  ec2_ami              = "ami-05b308c240ae70bb6"
 
   primary_aws_region    = module.primary_region.primary_aws_region
   webapp_subnet_id_1    = module.primary_region.webapp_subnet_1_id
@@ -65,7 +65,7 @@ module "eu-central-1-agents" {
   zone_name           = var.eu_region
   num_agents          = 1
   agent_instance_type = "t3.medium"
-  ec2_ami             = "ami-08d0eee5e00da8a9b"
+  ec2_ami             = "ami-05b308c240ae70bb6"
 
   domain_name           = var.domain_name
   project_name          = var.project_name
