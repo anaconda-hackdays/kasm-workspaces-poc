@@ -131,7 +131,7 @@ resource "aws_route53_record" "kasm-route53-elb-record" {
 
 resource "aws_route53_record" "kasm-app-url" {
   zone_id        = data.aws_route53_zone.kasm-route53-zone.zone_id
-  name           = var.domain_name
+  name           = "desktop.${var.domain_name}"
   type           = "A"
   set_identifier = "${var.project_name}-${var.zone_name}-set-id"
 

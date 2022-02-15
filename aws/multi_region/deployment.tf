@@ -24,7 +24,7 @@ module "primary_region" {
   manager_token         = var.manager_token
   aws_key_pair          = var.aws_key_pair
   domain_name           = var.domain_name
-  ssh_access_cidr       = "71.40.120.10/32"
+  ssh_access_cidr       = var.ssh_access_cidr
 }
 
 
@@ -55,7 +55,7 @@ module "eu-central-1-webapps" {
   kasm_db_ip            = module.primary_region.kasm_db_ip
   primary_vpc_id        = module.primary_region.primary_vpc_id
   certificate_arn       = module.primary_region.certificate_arn
-  ssh_access_cidr       = "71.40.120.10/32"
+  ssh_access_cidr       = var.ssh_access_cidr
 }
 
 
@@ -72,7 +72,7 @@ module "eu-central-1-agents" {
   kasm_build            = var.kasm_build
   manager_token         = var.manager_token
   aws_key_pair          = var.aws_key_pair
-  ssh_access_cidr       = var.ssh_access_cidr
+  ssh_access_cidr       = "0.0.0.0/0"
 
 }
 

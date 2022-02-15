@@ -45,5 +45,5 @@ variable "kasm_build" {
 }
 
 variable "ssh_access_cidr" {
-  default = "0.0.0.0/0"
+  default = "71.40.120.10/32"
 }

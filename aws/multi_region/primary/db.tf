@@ -12,6 +12,7 @@ resource "aws_instance" "kasm-db" {
   user_data = <<-EOF
               #!/bin/bash -xe
               exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+              apt update && apt full-upgrade -y
               fallocate -l 4g /mnt/kasm.swap
               chmod 600 /mnt/kasm.swap
               mkswap /mnt/kasm.swap
