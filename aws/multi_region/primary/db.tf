@@ -1,9 +1,9 @@
 resource "aws_instance" "kasm-db" {
-  ami                     = "${var.ec2_ami}"
-  instance_type           = "${var.db_instance_type}"
-  vpc_security_group_ids  = ["${aws_security_group.kasm-default-sg.id}"]
-  subnet_id               = "${aws_subnet.kasm-database-subnet.id}"
-  key_name                = "${var.aws_key_pair}"
+  ami                    = var.ec2_ami
+  instance_type          = var.db_instance_type
+  vpc_security_group_ids = ["${aws_security_group.kasm-default-sg.id}"]
+  subnet_id              = aws_subnet.kasm-database-subnet.id
+  key_name               = var.aws_key_pair
 
   root_block_device {
     volume_size = "40"
@@ -33,6 +33,6 @@ resource "aws_instance" "kasm-db" {
 
 
 output "kasm_db_ip" {
-  value = "${aws_instance.kasm-db.private_ip}"
+  value = aws_instance.kasm-db.private_ip
 }
 

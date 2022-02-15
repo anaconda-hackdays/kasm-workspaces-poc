@@ -1,5 +1,5 @@
 provider "aws" {
-  region     = "${var.aws_region}"
+  region = var.aws_region
 }
 
 data "aws_availability_zones" "available" {
@@ -7,6 +7,6 @@ data "aws_availability_zones" "available" {
 }
 
 output "primary_aws_region" {
-  value = "${var.aws_region}"
+  value = var.aws_region
 }
 

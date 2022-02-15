@@ -7,7 +7,7 @@ resource "aws_security_group" "kasm-default-elb-sg" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = [var.ssh_access_cidr]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {

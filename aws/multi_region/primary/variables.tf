@@ -35,8 +35,8 @@ variable "manager_token" {
 }
 
 variable "zone_name" {
-  default = "default"
-  description="A name given to the kasm deployment Zone"
+  default     = "default"
+  description = "A name given to the kasm deployment Zone"
 }
 
 variable "aws_key_pair" {
@@ -70,6 +70,6 @@ variable "agent_instance_type" {
 }
 
 variable "webapp_instance_type" {
-  default = "t3.small"
+  default     = "t3.small"
   description = "The instance type for the webapps"
 }

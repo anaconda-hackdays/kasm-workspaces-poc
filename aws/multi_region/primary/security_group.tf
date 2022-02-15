@@ -1,7 +1,7 @@
 resource "aws_security_group" "kasm-default-sg" {
   name        = "${var.project_name}-kasm-allow-db-access"
   description = "Allow access to db"
-  vpc_id      = "${aws_vpc.kasm-default-vpc.id}"
+  vpc_id      = aws_vpc.kasm-default-vpc.id
 
   ingress {
     from_port   = 22
