@@ -24,7 +24,7 @@ module "primary_region" {
   manager_token         = var.manager_token
   aws_key_pair          = var.aws_key_pair
   domain_name           = var.domain_name
-  ssh_access_cidr       = var.ssh_access_cidr
+  ssh_access_cidr       = "71.40.120.10/32"
 }
 
 
@@ -39,7 +39,7 @@ module "eu-central-1-webapps" {
   zone_name            = var.eu_region
   num_webapps          = 1
   webapp_instance_type = "t3.small"
-  ec2_ami              = "ami-0d527b8c289b4af7f"
+  ec2_ami              = "ami-01b996646377b6619"
 
   primary_aws_region    = module.primary_region.primary_aws_region
   webapp_subnet_id_1    = module.primary_region.webapp_subnet_1_id
@@ -55,7 +55,7 @@ module "eu-central-1-webapps" {
   kasm_db_ip            = module.primary_region.kasm_db_ip
   primary_vpc_id        = module.primary_region.primary_vpc_id
   certificate_arn       = module.primary_region.certificate_arn
-  ssh_access_cidr       = var.ssh_access_cidr
+  ssh_access_cidr       = "71.40.120.10/32"
 }
 
 

@@ -21,23 +21,23 @@ variable "aws_key_pair" {
 # Define these as env vars since repo is public
 
 variable "database_password" {
-  default = "changeme"
+  default = "6g*^5[w84,vp{A'U"
 }
 
 variable "redis_password" {
-  default = "changeme"
+  default = "6g*^5[w84,vp{A'U"
 }
 
 variable "user_password" {
-  default = "changeme"
+  default = "6g*^5[w84,vp{A'U"
 }
 
 variable "admin_password" {
-  default = "changeme"
+  default = "6g*^5[w84,vp{A'U"
 }
 
 variable "manager_token" {
-  default = "changeme"
+  default = "6g*^5[w84,vp{A'U"
 }
 
 variable "kasm_build" {
