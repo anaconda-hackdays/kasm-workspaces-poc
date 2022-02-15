@@ -39,7 +39,7 @@ module "eu-central-1-webapps" {
   zone_name            = var.eu_region
   num_webapps          = 1
   webapp_instance_type = "t3.small"
-  ec2_ami              = "ami-05b308c240ae70bb6"
+  ec2_ami              = "ami-0d527b8c289b4af7f"
 
   primary_aws_region    = module.primary_region.primary_aws_region
   webapp_subnet_id_1    = module.primary_region.webapp_subnet_1_id
@@ -65,7 +65,7 @@ module "eu-central-1-agents" {
   zone_name           = var.eu_region
   num_agents          = 1
   agent_instance_type = "t3.medium"
-  ec2_ami             = "ami-05b308c240ae70bb6"
+  ec2_ami             = "ami-0d527b8c289b4af7f"
 
   domain_name           = var.domain_name
   project_name          = var.project_name
