@@ -7,7 +7,7 @@ variable "eu_region" {
 }
 
 variable "domain_name" {
-  default = "devops.anaconda.com"
+  default = "dev.anaconda.com"
 }
 
 variable "project_name" {
