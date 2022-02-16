@@ -7,7 +7,7 @@ resource "aws_instance" "kasm-agent" {
   key_name               = var.aws_key_pair
 
   root_block_device {
-    volume_size = "50"
+    volume_size = "150"
   }
 
   user_data = <<-EOF

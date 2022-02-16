@@ -11,7 +11,7 @@ module "primary_region" {
   ec2_ami              = "ami-01b996646377b6619"
   db_instance_type     = "t3.small"
   num_agents           = 1
-  agent_instance_type  = "t3.medium"
+  agent_instance_type  = "t3.xlarge"
   num_webapps          = 1
   webapp_instance_type = "t3.small"
 
