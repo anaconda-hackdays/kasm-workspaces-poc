@@ -13,12 +13,4 @@ provider "aws" {
   assume_role {
     role_arn = "arn:aws:iam::811078382625:role/DevopsTerraform"
   }
-  default_tags {
-    tags = {
-      Owner          = "infrastructure"
-      Application    = "kasm-workspaces"
-      Provisioned-by = "terraform"
-      Environment    = "dev"
-    }
-  }
 }

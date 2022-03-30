@@ -37,5 +37,10 @@ resource "aws_instance" "kasm-web-app" {
               EOF
   tags = {
     Name = "${var.project_name}-${var.zone_name}-kasm-webapp"
+    Owner          = "infrastructure"
+    Application    = "kasm-workspaces"
+    Provisioned-by = "terraform"
+    Environment    = "dev"
+    Schedule       = "anaconda-dev-7to7"
   }
 }
